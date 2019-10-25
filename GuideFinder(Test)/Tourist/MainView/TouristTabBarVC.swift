@@ -10,6 +10,8 @@ import UIKit
 
 class TouristTabBarVC: UITabBarController {
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createController()

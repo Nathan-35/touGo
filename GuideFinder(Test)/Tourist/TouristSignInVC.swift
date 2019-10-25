@@ -11,6 +11,7 @@ import RealmSwift
 
 class TouristSignInVC: UIViewController, UITextFieldDelegate {
     
+    var button1 = UIButton()
     var tourists : Results<Tourist>!
     private var imageView = UIImageView()
     private var image = UIImage(named: "Authorization2.0")
@@ -78,6 +79,10 @@ class TouristSignInVC: UIViewController, UITextFieldDelegate {
         emailLabel.text = "Email"
         emailLabel.font = UIFont(name: "Helvetica", size: 16.5)
         view.addSubview(emailLabel)
+    }
+    
+    private func createButton1(){
+        
     }
     
 //    private func defaultImage(){
