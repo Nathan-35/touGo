@@ -12,6 +12,7 @@ import RealmSwift
 class TouristSignInVC: UIViewController, UITextFieldDelegate {
     
     var button1 = UIButton()
+    var hren = UIButton()
     var tourists : Results<Tourist>!
     private var imageView = UIImageView()
     private var image = UIImage(named: "Authorization2.0")
