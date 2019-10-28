@@ -66,6 +66,11 @@ class TouristSignInVC: UIViewController, UITextFieldDelegate {
 //        signInButton.layer.insertSublayer(gradient1!, at: 2)
 //    }
     
+    private func createButton1(){
+        button1.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        button1.center = view.center
+    }
+    
     private func createBackground() {
         imageView = UIImageView(frame: view.bounds)
         imageView.image = image
