@@ -86,10 +86,7 @@ class TouristSignInVC: UIViewController, UITextFieldDelegate {
         emailLabel.font = UIFont(name: "Helvetica", size: 16.5)
         view.addSubview(emailLabel)
     }
-    
-    private func createButton1(){
-        
-    }
+
     
 //    private func defaultImage(){
 //        let tourist = tourists
