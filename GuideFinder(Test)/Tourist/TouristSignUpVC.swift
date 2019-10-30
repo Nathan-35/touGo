@@ -15,7 +15,8 @@ class TouristSignUpVC: UIViewController, UITextFieldDelegate, UIViewControllerTr
     private var image = UIImage(named: "Authorization2.0")
     private var emailTextField = ShakeTextField()
     private var passwordTextField = ShakeTextField()
-    private var avatarButton = UIButton()
+    var avatarButton = UIButton()
+    var labelImage = UILabel()
     private var nameLabel = UILabel()
     private var passwordLabel = UILabel()
     private var purpleColor = #colorLiteral(red: 0.9536519647, green: 0.3652561605, blue: 0.601695478, alpha: 1).cgColor
@@ -192,7 +193,8 @@ class TouristSignUpVC: UIViewController, UITextFieldDelegate, UIViewControllerTr
     private func createNextButton() {
         avatarButton.frame = CGRect(x: view.center.x - 50, y: self.emailTextField.center.y - 180, width: 100, height: 100)
         avatarButton.layer.cornerRadius = avatarButton.frame.size.height / 2
-        avatarButton.setImage(UIImage(named: "addUser-3"), for: .normal)
+        labelImage.text = "addUser-3"
+        avatarButton.setImage(UIImage(named: labelImage.text ?? ""), for: .normal)
         avatarButton.layer.shadowColor = UIColor.black.cgColor
         avatarButton.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
         avatarButton.layer.shadowRadius = 5

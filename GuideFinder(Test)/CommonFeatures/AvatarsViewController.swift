@@ -12,19 +12,11 @@ class AvatarsViewController: UICollectionViewController, UICollectionViewDelegat
 
     var cellId = "cell"
     var button = UIButton()
-    var avatars : [Tourist] = {
-        var avatar1 = Tourist()
-        avatar1.imageName = "man-3.0"
-        var avatar2 = Tourist()
-        avatar2.imageName = "afro-boy"
-        var avatar3 = Tourist()
-        avatar3.imageName = "alack-boy"
-        var avatar4 = Tourist()
-        avatar4.imageName = "girl"
-        return [avatar1, avatar2, avatar3, avatar4]
-    }()
+    var label = UILabel()
+    var avatars = ["afro-boy","black-boy","girl-pigtail","girl","man-3.0","man-beard","man-blue","man-china","man-guide"]
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         collectionView.register(TouristCell.self, forCellWithReuseIdentifier: cellId)
         let avatar = UICollectionViewFlowLayout()
@@ -53,28 +45,36 @@ class AvatarsViewController: UICollectionViewController, UICollectionViewDelegat
         view.addSubview(button)
     }
     
-    
     @objc func animBackButton(param: Any) {
+        let touristVC = TouristSignUpVC()
+        touristVC.labelImage.text = label.text
         dismiss(animated: true, completion: nil)
     }
+    
+    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 9
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TouristCell
+        cell.backgroundView = UIImageView(image: UIImage(named: avatars[indexPath.row]))
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.width / 3) - 16, height: 100)
+        return CGSize(width: (view.frame.width / 3) - 40, height: 82)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 350, left: 10, bottom: 8, right: 10)
-    
-}
+        return UIEdgeInsets(top: 370, left: 30, bottom: 30, right: 30)
 
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        button.setImage(UIImage(named: avatars[indexPath.row]), for: .normal)
+        label.text = avatars[indexPath.row]
+    }
     
     
     
@@ -89,7 +89,7 @@ class TouristCell: UICollectionViewCell {
     }
     
     func setup() {
-        self.backgroundColor = .red
+        //self.backgroundColor = .red
     }
     
     required init?(coder: NSCoder) {
