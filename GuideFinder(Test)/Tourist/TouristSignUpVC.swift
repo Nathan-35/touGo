@@ -203,7 +203,8 @@ class TouristSignUpVC: UIViewController, UITextFieldDelegate, UIViewControllerTr
     }
    
     @objc func chooseAvatar(){
-        let avatarVC = AvatarsViewController()
+        let layout = UICollectionViewFlowLayout()
+        let avatarVC = AvatarsViewController(collectionViewLayout: layout)
         present(avatarVC, animated: true)
     }
     
